@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div id="app">
+      <span>Multiline message is:</span>
+      <p style="white-space: pre-line;">{{ message }}</p>
+      <textarea v-model="message" placeholder="add multiple lines"></textarea>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el : '#app',
+        data : {
+            num : 10,
+            uuid : 'abc1234',
+            name : 'text-blue',
+            loading : true
+        },
+          computed : {  // <- data 를 이용한
+            doubleNum: function () {
+                return this.num * 2
+            }
+          }
+      })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        {{ num }}
+        <button v-on:click="addNum">increase</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                num : 10
+            },
+            watch : {
+                num : function (val){
+                    this.logText(val);
+                }
+            },
+            methods : {
+                addNum : function () {
+                    this.num ++;
+                },
+                logText : function (val) {
+                    console.log('changed : ' , val);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
