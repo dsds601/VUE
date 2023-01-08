@@ -1,7 +1,8 @@
 # vue
 * 인프런 캡틴 판교님 강의 정리 내용입니다.
-*  캡틴 판교님 link
+* 캡틴 판교님 link
 https://joshua1988.github.io/vue-camp/
+* 실전 개념 https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md
 
 1. Reactivity
    * defineProperty API를 이용해서 화면에 변경을 감지해서 데이터 바이딩을 사용한다.
@@ -200,3 +201,11 @@ https://joshua1988.github.io/vue-camp/
     ...mapMutations(['clickBtn','addNumber'])
     ..mapMutations({popupMsg : 'clickBtn'}) // 컴포넌트 메서드명 : store 뮤테이션 명
     ~~~
+    
+## ESLint
+* 잘못된 문법 혹은 또는 에러 가이드 도구.
+
+### TIP
+1. components랑 구분을 위해 views라는 폴더 안에는 router에 관련된 vue 파일을 두는게 좋다
+
+
