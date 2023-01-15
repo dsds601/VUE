@@ -66,6 +66,9 @@ https://joshua1988.github.io/vue-camp/
 ## Vuex
 1. Vuex 시작하기
    * src폴더 밑에 store 폴더를 만들고 store.js 파일 생성
+   * Vue 상태관리 <a href='https://vuex.vuejs.org/'>link</a>
+   * VueComponent -> actions -> mutations -> state -> Vue
+     * 위 구조 기억
    ~~~
    import Vue from "vue";
    import Vuex from "vuex";
@@ -171,6 +174,8 @@ https://joshua1988.github.io/vue-camp/
    ~~~
 4. actions -> mapActions
    1. Vuex에 선언한 actions 속성을 뷰 컴포넌트에 연결해주는 헬퍼
+   2. 백엔드에서 데이터를 가져오는 행위는 actions 에서 이루어진다.
+      1. vue파일내에서 store에 있는 actions 메서드를 가져오려면 dispatch 메서드를 이용해서 가져온다.
    ~~~
    import {mapActions} from 'vuex'
    
@@ -183,6 +188,28 @@ https://joshua1988.github.io/vue-camp/
          setTimeout(() => context.commit('clickBtn'), 200);
       }
    }
+   
+   // store.js
+   export const store = new Vuex.Store({
+    state : {
+        news : []
+    },
+    actions : {
+        FETCH_NEWS() {
+            fetchNewsList()
+                .then(res => {
+                    console.log(res);
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        }
+    }
+   });
+
+   // Vue
+    this.$store.dispatch('FETCH_NEWS')
+
    ~~~
  
 ### 사용법
@@ -207,5 +234,6 @@ https://joshua1988.github.io/vue-camp/
 
 ### TIP
 1. components랑 구분을 위해 views라는 폴더 안에는 router에 관련된 vue 파일을 두는게 좋다
+
 
 
